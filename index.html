@@ -1,17 +1,37 @@
-﻿<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World, I'm Daniela Patrício</h1>
-<img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAIA_wDGAAAAAQAAAAAAAAoHAAAAJGRiYjAyMmFkLWViM2MtNGQ4MC1hNjNiLTY3NWM1YzU4MmZmZg.jpg"/>
-<p>My website is still under development, follow me on LinkedIn for more updates:</p>
-  <a href="https://pt.linkedin.com/in/danielaaspatricio"> LinkedIn</a> 
+---
+layout: default
+title: Home
+---
 
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-<style>
-  body { 
-    text-align:center;
-}
-</style>
-</html>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
