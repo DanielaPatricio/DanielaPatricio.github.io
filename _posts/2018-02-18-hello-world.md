@@ -3,7 +3,7 @@ layout: post
 title: Hello World
 ---
 
-Hello World! I'm Daniela and in this post I intend to show a little bit about myself, my background and, most importantly, why I'm into Data Science and how this blog will do on my path to be a Data Scientist.
+Hello World! I'm Daniela and in this post I intend to show a little bit about myself, my background and, most importantly, why I'm into Data Science and how this blog will help on my path to be a Data Scientist.
 
 I was born 28 years ago in the beautiful city of [Setúbal](https://visitsetubal.com.pt/en/) and when I was a young child, my family moved to the sunny region of [Algarve](https://www.visitportugal.com/en/destinos/algarve) where I was raised. 
 
