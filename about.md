@@ -11,4 +11,4 @@ At the moment I continue to pursue data-driven challenges with the purpose of gr
 As for personal traits, I consider myself a natural team-player,curious-thinker, flexible, problem solver and a dedicated person who is eager to learn. 
 
 The main areas of my interests, besides Data Science, are Culture, Energy, Health, Technology, Travelling, Science and Sports. 
-Actually I spend my free time on exercising, watching TV series, palying video games and going to concerts. 
+Actually I spend my free time on exercising, watching TV series, playing video games and going to concerts. 
