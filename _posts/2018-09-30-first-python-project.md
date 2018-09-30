@@ -29,7 +29,7 @@ The Spider developed in the previous step will run every week and this task will
 
 # Third challenge: Showing the data
 
-Using the data stored in the previous step, a website will be made show the information on the searched dimensions. In it’s core will be very similar to the [IKEA BY SIZE](http://ikeabysize.com/), although I also want to limit the number of items shown by adding extra options on the search form. 
+Using the data stored in the previous step, a website will be made show the information on the searched dimensions. In it’s core it will be very similar to the [IKEA BY SIZE](http://ikeabysize.com/), although I also want to limit the number of items shown by adding extra options on the search form. 
 In this step I intend to use [Django]( https://www.djangoproject.com/) framework.
 
 # Conclusion
