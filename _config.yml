@@ -9,7 +9,7 @@ permalink:        pretty
 title:            Daniela Patrício
 tagline:          'Data Analyst'
 description:      'Data Analyst'
-url:              http://hyde.getpoole.com
+url:              http://danielapatricio.github.io
 
 author:
   name:           'Mark Otto'
@@ -21,4 +21,4 @@ paginate:         5
 version:          2.0.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           http://danielapatricio.github.io
