@@ -7,7 +7,7 @@ title: My First Python Project
 ---
 
 
-Programming is a much need tool in every Data Analyst/Scientist toolset. You apply your programming skills in you daily data processes, as administrate, clean and analyze data, in order to achieve their simplification, automatization and make them faster. It is a skill that I need to improve and the best way to learn is to practice. This is the main purpose of this project, to practice the competencies that I’m learning on MOOCs, books and articles. 
+Programming is a much needed tool in every Data Analyst/Scientist toolset. You apply your programming skills in your daily data processes as administrate, clean and data analysis in order to achieve their simplification, automatization and optimization. It is a skill that I need to improve and the best way to learn is to practice. This is the main purpose of this project, to practice the competencies that I’m learning on MOOCs, books and articles. 
 
 There are a lot of programming languages that are used on Data Analysis/Science and the most popular are [R]( https://www.r-project.org/about.html), [Python]( https://www.python.org/about/) and [SQL]( https://www.w3schools.com/sql/sql_intro.asp). For this project, I chose Python because it’s a versatile language that can be applied in many domains and I will take this fact as an advantage to improve my learning experience. 
 
