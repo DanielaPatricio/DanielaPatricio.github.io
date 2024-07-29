@@ -1,3 +1,3 @@
-#data science blog
+#My Data Viz portfolio
 
-A [blog](danielapatricio.github.io) about my journey on the Data Science Universe. Created using [Jekyll](http://jekyllrb.com) with [Hyde](http://hyde.getpoole.com/) theme.
+A [site](danielapatricio.github.io) with my portfolio and recomendations on data viz. Created using [Jekyll](http://jekyllrb.com) with [Hyde](http://hyde.getpoole.com/) theme.
