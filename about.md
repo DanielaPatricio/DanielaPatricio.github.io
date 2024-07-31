@@ -6,7 +6,7 @@ title: About
 
 # Section under construction 
 
-![penguin](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExamh1OWMzb3V1dXc4eDRqZTBjM29hdXZvb3B3Z24ybjdzdjBwMmZjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vR1dPIYzQmkRzLZk2w/giphy.gif****)
+![penguin](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExamh1OWMzb3V1dXc4eDRqZTBjM29hdXZvb3B3Z24ybjdzdjBwMmZjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vR1dPIYzQmkRzLZk2w/giphy.webp)
 
 ## Here is an inspirational quote
 
