@@ -3,14 +3,12 @@ layout: page
 title: About
 ---
 
-I am a Data Analyst and an Aspiring Data Scientist with professional experience in Business Intelligence, Information Management, Contract Management and Quality Procedures.
 
-During the execution of my dissertation for the MSc. in Marketing, I was allowed to work with a variety of data processes as data’s collection, cleaning, analysis and visualization. This experience open up a world where I found my passion for data. This passion lead me to my first professional challenge, at EDP Distribuição, where I had the opportunity to work on Business Intelligence related to energy distribution data. More recently I've worked as a Data Analysis Consultant for Nokia and my main responsabilities were related to 
-create and maintaining dynamic dashboards with Power BI.
+# Section under construction 
 
-At the moment I continue to pursue data-driven challenges with the purpose of growing my strengths into the Data Science domain.
+[penguin](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExamh1OWMzb3V1dXc4eDRqZTBjM29hdXZvb3B3Z24ybjdzdjBwMmZjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vR1dPIYzQmkRzLZk2w/giphy.gif****)
 
-As for personal traits, I consider myself a natural team-player,curious-thinker, flexible, problem solver and a dedicated person who is eager to learn. 
+## Here is an inspirational quote
 
-The main areas of my interests, besides Data Science, are Culture, Energy, Health, Technology, Travelling, Science and Sports. 
-Actually I spend my free time on exercising, watching TV series, playing video games and going to concerts. 
+“Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space.”
+― Edward R. Tufte, The Visual Display of Quantitative Information, 2nd Ed.
