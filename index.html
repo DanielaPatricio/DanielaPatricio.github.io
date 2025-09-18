@@ -1,37 +1,238 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela Patrício — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Daniela Patrício: projects, skills, contact." />
+  <meta property="og:title" content="Daniela Patrício — Portfolio" />
+  <meta property="og:description" content="Projects, skills, and contact." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --surface: #101319;
+      --text: #e5e7eb;
+      --muted: #9aa3ae;
+      --brand: #38bdf8; /* cyan-400 */
+      --brand-600:#0891b2; /* cyan-700 */
+      --ring: rgba(56,189,248,.35);
+      --card: #0f1115;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#ffffff; --surface:#f6f7f9; --text:#0f172a; --muted:#475569; --card:#ffffff;
+      }
+    }
+    [data-theme="light"]{ --bg:#ffffff; --surface:#f6f7f9; --text:#0f172a; --muted:#475569; --card:#ffffff; }
+    html,body{ height:100%; }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      background: var(--bg); color: var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .container{ width:100%; max-width:1100px; margin:0 auto; padding:0 20px; }
+    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 92%, transparent); border-bottom:1px solid color-mix(in oklab, var(--muted) 20%, transparent); }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand{ font-weight:700; letter-spacing:.2px; display:flex; align-items:center; gap:10px; }
+    .brand .dot{ width:9px; height:9px; border-radius:9999px; background:var(--brand); box-shadow:0 0 0 6px var(--ring); }
+    nav a{ color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600; font-size:14px; }
+    nav a:hover, nav a:focus{ color:var(--text); }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid color-mix(in oklab, var(--brand) 65%, var(--text)); border-radius:10px; color:var(--text); text-decoration:none; font-weight:600; box-shadow:0 0 0 0 rgba(0,0,0,0); transition:.2s transform, .2s box-shadow, .2s background;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 18%, transparent), transparent);
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow:0 8px 24px -8px var(--ring); }
+    .btn.ghost{ background:transparent; border-color:color-mix(in oklab, var(--muted) 40%, transparent); }
+    .grid{ display:grid; gap:18px; }
+    .hero{ display:grid; align-items:center; padding:64px 0 32px; gap:28px; }
+    .hero h1{ font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin:0 0 8px; }
+    .hero p{ color:var(--muted); margin:0; font-size: clamp(16px, 2.2vw, 18px); }
+    .hero .actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; }
+    .avatar{ width:96px; height:96px; border-radius:18px; object-fit:cover; border:1px solid color-mix(in oklab, var(--muted) 30%, transparent); }
+    .hero-card{ display:grid; grid-template-columns:96px 1fr auto; gap:18px; padding:18px; border:1px solid color-mix(in oklab, var(--muted) 22%, transparent); background:var(--surface); border-radius:16px; }
+    .section{ padding:34px 0; }
+    .section h2{ font-size: clamp(22px, 3vw, 28px); margin:0 0 6px; }
+    .section p.lead{ color:var(--muted); margin-top: 0; }
+    .card{ background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 18%, transparent); border-radius:16px; padding:18px; }
+    .project-card{ display:flex; flex-direction:column; gap:12px; }
+    .project-tags{ display:flex; flex-wrap:wrap; gap:8px }
+    .tag{ font-size:12px; padding:4px 10px; border-radius:9999px; border:1px solid color-mix(in oklab, var(--muted) 30%, transparent); color:var(--muted); }
+    .project-card img{ width:100%; aspect-ratio: 16/9; object-fit:cover; border-radius:12px; border:1px solid color-mix(in oklab, var(--muted) 22%, transparent); background: #0e1116; }
+    .project-card h3{ margin:2px 0 0; font-size:18px }
+    .project-card p{ margin:0; color:var(--muted); font-size:14px }
+    .project-links{ display:flex; gap:12px; margin-top:4px }
+    .badge{ font-size:12px; border-radius:8px; padding:6px 8px; background: color-mix(in oklab, var(--brand) 18%, transparent); border:1px solid color-mix(in oklab, var(--brand) 40%, transparent); }
+    .theme-toggle{ border:1px solid color-mix(in oklab, var(--muted) 35%, transparent); background:transparent; color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    footer{ padding:28px 0 54px; color:var(--muted); font-size:14px; }
+    /* Responsive */
+    @media(min-width: 720px){
+      .hero{ grid-template-columns: 1.2fr 1fr; }
+      .hero-card{ grid-template-columns: 96px 1fr; }
+    }
+    @media(min-width: 860px){
+      .projects-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Go to home"><span class="dot" aria-hidden="true"></span> <span>Daniela Patrício</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">☀︎/☾</button>
+      </nav>
+    </div>
+  </header>
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+  <main id="home" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-card">
+        <img src="https://avatars.githubusercontent.com/u/0?v=4" alt="Your profile photo" class="avatar" />
+        <div>
+          <h1>Hi, I'm <span style="color:var(--brand)">Daniela Patrício</span></h1>
+          <p><strong>Data Viz Enthusiast</strong> &middot; <strong>Power BI</strong> &middot; <strong>Data Modeling</strong></p>
+          <div class="actions">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      </div>
+    </section>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p class="lead">One or two crisp paragraphs about what you do, what you care about, and what you're great at. Avoid buzzword salad; focus on outcomes and a few niche strengths.</p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="card">
+          <h3 style="margin:0 0 6px">Expertise</h3>
+          <p style="margin:0">Power BI · DAX · Data modeling · ETL (Power Automate) · Report design · UX for dashboards</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px">Currently</h3>
+          <p style="margin:0">Designing and building reports that tell clear stories and scale across teams.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px">Highlights</h3>
+          <p style="margin:0">Embedded quality-of-service report · NPS analytics suite · Automated dataset refresh with Power Automate.</p>
+        </div>
+      </div>
+    </section>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <p class="lead">A handful of things I'm proud of. Each card links to the repo and a live demo if available.</p>
+      <div id="projectsGrid" class="grid projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));"></div>
+    </section>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="lead">Open to collaboration, consulting, and interesting problems. The quickest way to reach me is email.</p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="card">
+          <h3 style="margin:0 0 6px">Email</h3>
+          <a class="btn" href="mailto:daniela@example.com">daniela@example.com</a>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px">Elsewhere</h3>
+          <div class="project-links">
+            <a class="btn ghost" href="https://github.com/danielapatricio" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" href="https://x.com/youruser" target="_blank" rel="noopener">X</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items:center;">
+      <div>© <span id="year"></span> Daniela Patrício</div>
+      <div style="text-align:right">Built with ♥ on GitHub Pages</div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Theme toggle ---
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('theme');
+    if(stored){ root.setAttribute('data-theme', stored); btn.setAttribute('aria-pressed', stored==='light'); }
+    btn?.addEventListener('click', () => {
+      const curr = root.getAttribute('data-theme');
+      const next = curr === 'light' ? '' : 'light';
+      if(next){ root.setAttribute('data-theme', next); localStorage.setItem('theme', next); btn.setAttribute('aria-pressed', 'true'); }
+      else { root.removeAttribute('data-theme'); localStorage.removeItem('theme'); btn.setAttribute('aria-pressed', 'false'); }
+    });
+
+    // --- Projects (edit this array only) ---
+    const projects = [
+      {
+        title: 'Quality of Service — Embedded Report',
+        desc: '5‑page QoS report embedded on company site; visual formatting and data modeling; official color scheme; interactions managed for clarity.',
+        img: 'https://images.unsplash.com/photo-1551281044-8fdda3d7eac5?q=80&w=1200&auto=format&fit=crop',
+        tags: ['Power BI','Data Viz','UX'],
+        repo: '#',
+        demo: 'https://danielapatricio.github.io/'
+      },
+      {
+        title: 'Net Promoter Score — Company Report',
+        desc: '10‑page NPS analytics with standardized template; data model & layout; filters and interactions enabled.',
+        img: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop',
+        tags: ['Power BI','NPS','Reporting'],
+        repo: '#',
+        demo: 'https://danielapatricio.github.io/'
+      },
+      {
+        title: 'Automated Daily Dataset — Power Automate',
+        desc: 'ETL flow to feed/refresh a complex Power BI model (7 fact tables, 26 dimensions) via Power Automate.',
+        img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop',
+        tags: ['ETL','Power Automate','Power BI'],
+        repo: '#',
+        demo: 'https://danielapatricio.github.io/'
+      }
+    ];
+
+    const grid = document.getElementById('projectsGrid');
+    function tag(t){ return `<span class="tag">${t}</span>` }
+    function card(p){
+      return `
+        <article class="card project-card">
+          <img loading="lazy" src="${p.img}" alt="${p.title} preview"/>
+          <div>
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <div class="project-tags">${p.tags.map(tag).join('')}</div>
+            <div class="project-links">
+              <a class="btn" href="${p.repo}" target="_blank" rel="noopener">GitHub</a>
+              ${p.demo && p.demo !== '#' ? `<a class="btn ghost" href="${p.demo}" target="_blank" rel="noopener">Live Demo</a>` : ''}
+            </div>
+          </div>
+        </article>`
+    }
+    grid.innerHTML = projects.map(card).join('');
+
+    // Small enhancements
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Smooth scroll (native behavior is fine, but this helps Safari)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
