@@ -86,7 +86,9 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">☀︎/☾</button>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -165,18 +167,32 @@
   </footer>
 
   <script>
-    // --- Theme toggle ---
-    const root = document.documentElement;
-    const btn = document.getElementById('themeToggle');
-    const stored = localStorage.getItem('theme');
-    if(stored){ root.setAttribute('data-theme', stored); btn.setAttribute('aria-pressed', stored==='light'); }
-    btn?.addEventListener('click', () => {
-      const curr = root.getAttribute('data-theme');
-      const next = curr === 'light' ? '' : 'light';
-      if(next){ root.setAttribute('data-theme', next); localStorage.setItem('theme', next); btn.setAttribute('aria-pressed', 'true'); }
-      else { root.removeAttribute('data-theme'); localStorage.removeItem('theme'); btn.setAttribute('aria-pressed', 'false'); }
-    });
+// --- Theme toggle (🌙 for light mode, ☀️ for dark mode) ---
+const root = document.documentElement;
+const btn = document.getElementById('themeToggle');
+const icon = document.getElementById('themeIcon');
 
+// Initialize theme
+let storedTheme = localStorage.getItem('theme');
+if (!storedTheme) {
+  storedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+root.setAttribute('data-theme', storedTheme);
+updateIcon(storedTheme);
+
+// Handle click
+btn.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', current);
+  localStorage.setItem('theme', current);
+  updateIcon(current);
+});
+
+// Update icon based on theme
+function updateIcon(theme) {
+  icon.textContent = theme === 'light' ? '🌙' : '☀️';
+
+  
     // --- Projects (edit this array only) ---
     const projects = [
       {
