@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daniela Patrício — Senior Data Analyst with a Data Engineering background. 8+ years building dashboards, pipelines, and automated reporting in Power BI, SQL Server, and Azure." />
+  <meta name="description" content="Daniela Patrício — Senior BI Engineer with a Data Engineering background. 8+ years building dashboards, pipelines, and automated reporting in Power BI, SQL Server, and Azure." />
   <meta name="author" content="Daniela Assunção Santana Patrício" />
   <meta name="theme-color" content="#0a0f1a" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Daniela Patrício — Senior Data Analyst" />
-  <meta property="og:description" content="8+ years building dashboards, pipelines, and automated reporting. Power BI · SQL · Azure · Python · Agentic AI." />
+  <meta property="og:title" content="Daniela Patrício — Senior BI Engineer" />
+  <meta property="og:description" content="8+ years building dashboards, pipelines, and automated reporting. Power BI · SQL · Azure · Databricks · Agentic AI." />
   <meta property="og:type" content="website" />
 
-  <title>Daniela Patrício — Senior Data Analyst</title>
+  <title>Daniela Patrício — Senior BI Engineer</title>
 
   <script>
   // Set theme as early as possible to avoid flash-of-wrong-theme
@@ -155,6 +155,9 @@
   .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.25rem clamp(2rem,4vw,3.5rem);align-items:start;grid-template-areas:"lead traits" "body traits"}
   .about-lead{grid-area:lead;font-size:1.25rem;color:var(--text);line-height:1.6;margin:0;font-weight:400}
   .about-body{grid-area:body;color:var(--text-dim);margin:0;font-size:1rem}
+  .about-body p{margin:0 0 1rem 0}
+  .about-body p:last-child{margin-bottom:0}
+  .about-body .style-line{font-style:italic;color:var(--text-mute);border-left:2px solid var(--primary);padding-left:.85rem;margin-top:1.25rem}
   .about-traits{grid-area:traits;align-self:start;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;background:rgba(255,255,255,.015);font-size:.85rem}
   .about-traits li{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px dashed var(--border)}
   .about-traits li:last-child{border-bottom:0}
@@ -338,7 +341,7 @@
         <span class="hero-name">Daniela Patrício</span>
         <span class="hero-role">
           <span class="role-prefix mono">&gt;</span>
-          Senior Data Analyst <span class="sep">·</span> <span style="color:var(--text-mute);">Data Engineering background</span>
+          Senior BI Engineer <span class="sep">·</span> <span style="color:var(--text-mute);">Data Engineering background</span>
         </span>
       </h1>
 
@@ -409,17 +412,25 @@
         data solutions. I design SQL pipelines, data warehousing, and automated reporting
         systems that guarantee information integrity and accessibility.
       </p>
-      <p class="about-body">
-        Currently at <strong>CTT — Correios de Portugal</strong>, where I authored the
-        <strong>#1 and #2 most-viewed Power BI reports across the entire company</strong> —
-        and most of the top 10 overall — supporting decision-making across 20+ departments
-        and 500+ stakeholders, including executive leadership. Day-to-day toolkit:
-        <strong>Power BI</strong>, <strong>SQL Server</strong>, <strong>Azure Databricks</strong>
-        (including <strong>Databricks SQL</strong>), <strong>Power Automate</strong>, and <strong>Python</strong>.
-        I have a deeper Data
-        Engineering background (pipelines, ETL, warehousing) that I bring in when the analyst
-        work calls for it.
-      </p>
+      <div class="about-body">
+        <p>
+          Currently at <strong>CTT — Correios de Portugal</strong>, where I authored the
+          <strong>#1 and #2 most-viewed Power BI reports across the entire company</strong> —
+          and most of the top 10 overall — supporting decision-making across 20+ departments
+          and 500+ stakeholders, including executive leadership. Day-to-day toolkit:
+          <strong>Power BI</strong>, <strong>SQL Server</strong>, <strong>Azure Databricks</strong>
+          (including <strong>Databricks SQL</strong>), <strong>Power Automate</strong>, and <strong>Python</strong>.
+          I have a deeper Data Engineering background (pipelines, ETL, warehousing) that I bring in when the analyst
+          work calls for it.
+        </p>
+        <p>
+          My work is about <strong>helping people do more fulfilling tasks by automating information delivery</strong>
+          — taking repetitive reporting off their plates so attention can go to decisions and judgment.
+        </p>
+        <p class="style-line">
+          I do my best work in async environments that value autonomy — outcomes over activity, writing over meetings, building over reacting.
+        </p>
+      </div>
       <ul class="about-traits mono">
         <li><span class="trait-key">analytical</span><span class="trait-val">detail-oriented</span></li>
         <li><span class="trait-key">reliable</span><span class="trait-val">organized · collaborative</span></li>
@@ -642,7 +653,7 @@
       <span class="section-kicker mono">04 / portfolio</span>
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">
-        A growing collection of case studies, dashboards, and data pipelines. Placeholders below will be replaced as projects are published.
+        A growing collection of case studies, dashboards, and data tools.
       </p>
     </div>
 
@@ -679,47 +690,6 @@
         </a>
       </article>
 
-      <article class="project-card placeholder">
-        <div class="project-head">
-          <span class="project-tag tag-dashboard">Dashboard</span>
-          <span class="project-status mono">coming soon</span>
-        </div>
-        <h3 class="project-title">Quality of Service Dashboard — Case Study</h3>
-        <p class="project-desc">
-          Walkthrough of the design, data model, and DAX behind a Power BI dashboard used daily by 10,000+ users. (Case study — non-sensitive extracts only.)
-        </p>
-        <div class="project-stack mono">
-          <span>Power BI</span><span>DAX</span><span>SQL</span><span>SSAS</span>
-        </div>
-      </article>
-
-      <article class="project-card placeholder">
-        <div class="project-head">
-          <span class="project-tag tag-pipeline">Pipeline</span>
-          <span class="project-status mono">coming soon</span>
-        </div>
-        <h3 class="project-title">Near Real-Time Alarms — Architecture</h3>
-        <p class="project-desc">
-          End-to-end reference architecture for an operational alarms system: ingestion, rules engine, and notification fan-out via Power Automate.
-        </p>
-        <div class="project-stack mono">
-          <span>Azure Data Factory</span><span>Databricks</span><span>Power Automate</span>
-        </div>
-      </article>
-
-      <article class="project-card placeholder">
-        <div class="project-head">
-          <span class="project-tag tag-analysis">Analysis</span>
-          <span class="project-status mono">coming soon</span>
-        </div>
-        <h3 class="project-title">NPS Deep-Dive — Public Dataset</h3>
-        <p class="project-desc">
-          Customer satisfaction analysis on a public dataset, replicating the NPS methodology used at CTT with full SQL + Power BI reproducibility.
-        </p>
-        <div class="project-stack mono">
-          <span>SQL</span><span>Power BI</span><span>Python</span>
-        </div>
-      </article>
     </div>
   </section>
 
