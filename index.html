@@ -461,17 +461,16 @@
           <h3 class="tl-role">Data Analyst / Data Engineer</h3>
           <p class="tl-org">CTT — Correios de Portugal</p>
           <ul class="tl-bullets">
-            <li>Designed and maintained <strong>SQL Server-based pipelines</strong> and ETL workflows using Power Automate and Azure Data Factory, ensuring accurate and timely data refreshes for Power BI and internal reporting systems.</li>
-            <li>Built <strong>centralized data warehouse structures</strong> supporting decision-making across 20+ departments and 500+ stakeholders, including executive leadership.</li>
-            <li>Created standardized report templates and dashboards in Power BI, reinforcing consistency and accessibility of key business metrics.</li>
-            <li>Designed and deployed an <strong>Operational Alarms system</strong> with near real-time data streams (Power Automate) supporting proactive service quality actions.</li>
-            <li>Used Python within Azure Databricks for data transformation, cleaning, and validation as part of larger ETL workflows.</li>
+            <li>Built and maintained data products on a <strong>medallion-style architecture</strong> using Azure Data Factory, Azure Data Lake, Databricks, and SQL Server (Databricks SQL for internal self-service). Authored new extraction pipelines and dimensions, plus extensions to existing fact and dimension tables.</li>
+            <li><strong>Co-owned the operational data pipeline</strong> sourcing distribution operations data into Power BI and broader analytics — <strong>Grafana</strong> for monitoring + stage-by-stage data reconciliation, plus failed-run triage, debugging, and ongoing reliability.</li>
+            <li>Built <strong>centralised data warehouse structures</strong> supporting decision-making across 20+ departments and 500+ stakeholders, including executive leadership.</li>
+            <li>Designed and deployed an <strong>Operational Alarms system</strong> with near real-time data streams (Power Automate) supporting proactive service-quality actions.</li>
           </ul>
           <div class="tl-wins">
             <p class="tl-wins-title mono">key results</p>
             <ul>
               <li>Authored <strong>the #1 and #2 most-viewed Power BI reports across CTT</strong> — and most of the top 10 overall — on the company's Power BI server.</li>
-              <li><strong>Quality of Service</strong> dashboards — including one embedded on CTT's website, with <strong>10,000+ users having access</strong> at the time of build.</li>
+              <li><strong>Quality of Service</strong> dashboards — including one embedded on CTT's website, with a custom user-to-data dimension powering <strong>Power BI Row-Level Security</strong> (<code style="font-family:var(--font-mono);font-size:.88em;color:var(--primary-hi);background:rgba(34,211,238,.08);padding:.05rem .35rem;border-radius:4px">USERPRINCIPALNAME()</code>) coordinated with the site team's authentication. <strong>10,000+ users</strong> with access at time of build.</li>
               <li><strong>NPS dashboard</strong> — built to the precision required for shareholder visibility, used by executive leadership to guide strategy.</li>
             </ul>
           </div>
