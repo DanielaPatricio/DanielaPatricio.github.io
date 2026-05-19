@@ -6,7 +6,7 @@
 <meta name="description" content="Case study: identity-aware Power BI delivery to thousands of B2B clients via embedded reports, App Owns Data, and row-level security at scale." />
 <meta name="theme-color" content="#0a0f1a" />
 <meta property="og:title" content="Identity-Aware Reporting at Scale — Embedded Power BI for B2B Clients" />
-<meta property="og:description" content="One dataset, dual-mode access. How I delivered a governed Power BI report to 10,000+ external clients through a customer site — and kept it running for 5+ years with no known leaks." />
+<meta property="og:description" content="One dataset, dual-mode access. How I delivered a governed Power BI report to 10,000+ external clients through a customer site, and kept it running for 5+ years with no known leaks." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://danielapatricio.github.io/projects/qos-rls-architecture.html" />
 <meta property="og:image" content="https://danielapatricio.github.io/assets/linkedin-featured-dark.png" />
@@ -14,7 +14,7 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Identity-Aware Reporting at Scale — Case Study" />
-<meta name="twitter:description" content="One dataset, dual-mode access. How I delivered a governed Power BI report to 10,000+ external clients through embedded RLS — 5+ years in production." />
+<meta name="twitter:description" content="One dataset, dual-mode access. How I delivered a governed Power BI report to 10,000+ external clients through embedded RLS, 5+ years in production." />
 <meta name="twitter:image" content="https://danielapatricio.github.io/assets/linkedin-featured-dark.png" />
 <title>Identity-Aware Reporting at Scale — Case Study · Daniela Patrício</title>
 
@@ -239,7 +239,7 @@
     <p class="subtitle">
       A governed delivery-quality report for a national postal and logistics operator,
       embedded in the customer site and scoped per authenticated client. One dataset serves
-      ~10,000+ external clients <em>and</em> internal users — without duplication, and without
+      ~10,000+ external clients <em>and</em> internal users, without duplication, and without
       ever exposing the wrong client's data.
     </p>
 
@@ -256,10 +256,10 @@
 
     <p class="lead">
       Before this report existed, clients had two options: look up individual packages one
-      at a time on the public tracker — no login, just a tracking number — or ask their
+      at a time on the public tracker (no login, just a tracking number), or ask their
       commercial contact at the company to manually prepare a delivery-quality summary.
       Multiply that across roughly ten thousand client companies on weekly, monthly, and
-      on-request cadences — that's the volume of manual reporting the commercial team was
+      on-request cadences, and that's the volume of manual reporting the commercial team was
       absorbing.
     </p>
 
@@ -285,7 +285,7 @@
     <h2 class="h">The brief</h2>
     <p>
       The commercial team wanted to give each client self-service access to their delivery
-      quality of service — the same aggregated SLA view internal teams were already using,
+      quality of service: the same aggregated SLA view internal teams were already using,
       filtered to that client's contracts and translated into language a logistics customer
       could read without a glossary. The deliverable had to live inside the client site so
       that <strong>logging into the site was the only credential a client needed</strong>.
@@ -295,7 +295,7 @@
     <p>
       Existing internal reports for the same data already covered operational, executive,
       commercial, financial, and audit views. None of them were appropriate to expose
-      directly. The internal nomenclature wasn't readable to clients — events like
+      directly. The internal nomenclature wasn't readable to clients: events like
       <em>"on expedition"</em> meant something specific inside the company that had no
       equivalent in the public language clients used (we'd say <em>"object in transit"</em>
       instead). And the internal models carried columns that clients should never see.
@@ -305,7 +305,7 @@
     <p>
       The natural Power BI-native answer to per-client access is one workspace per client,
       with the client's users invited to their workspace. That was ruled out long before this
-      project began — Power BI Service requires an internal-tenant account for every user,
+      project began. Power BI Service requires an internal-tenant account for every user,
       and granting 10,000+ external companies internal accounts wasn't viable from a security
       or licensing perspective. The security team had given that answer to a previous
       client-facing report effort, so by the time this project came up, <strong>embedded +
@@ -386,10 +386,10 @@
     <p>
       Two RLS roles, one model. The <em>"client"</em> role keys off <code>USERPRINCIPALNAME()</code>
       against the email column in the bridge dim. The <em>"see-all"</em> role applies no
-      filter at all — but only internal users with explicit Power BI workspace permission
+      filter at all, but only internal users with explicit Power BI workspace permission
       can open the report in the first place. Internal access is governed by tenant SSO
       plus workspace permissions; external access is governed by the embed token. <strong>The
-      RLS layer sits on top of both</strong> — it doesn't replace the upstream access controls,
+      RLS layer sits on top of both</strong>: it doesn't replace the upstream access controls,
       it scopes what each authorised viewer can actually read. From a maintenance standpoint,
       there is one dataset, one set of measures, one lineage to reason about.
     </p>
@@ -398,10 +398,10 @@
     <p>
       The bridge dim is the smallest, most boring object in the whole architecture, and
       also the one that does all the real work. It maps each authenticated user to the
-      set of (client, contract) scopes they're allowed to read — one row per
+      set of (client, contract) scopes they're allowed to read: one row per
       <strong>(user, client, contract)</strong> triple. A user with access to five
       contracts appears as five rows; a contract shared across several site users
-      appears for each of them. That many-to-many shape is non-negotiable — corporate
+      appears for each of them. That many-to-many shape is non-negotiable; corporate
       clients routinely have multiple users at multiple contracts, and a stricter grain
       would have forced the model to choose between correctness and clean joins.
     </p>
@@ -422,8 +422,8 @@
       come from the site's user table (the authoritative source for which emails
       can authenticate), merged with the existing client master and contract data
       already maintained by other upstream systems. Everything downstream of the
-      site feed — corporate restructures, contract reassignments, new users
-      onboarded — is handled in the daily refresh. The freshness story matters because
+      site feed (corporate restructures, contract reassignments, new users
+      onboarded) is handled in the daily refresh. The freshness story matters because
       identity changes are rare enough that 24-hour latency is acceptable; the SLA
       data itself is much fresher.
     </p>
@@ -431,26 +431,26 @@
     <h2 class="h">The fact as a view, not a copy</h2>
     <p>
       The "new" client-facing fact was implemented as a SQL view on top of the existing
-      internal QoS fact tables — not a separately materialised table with its own
+      internal QoS fact tables, not a separately materialised table with its own
       pipeline. The view does three jobs at once:
     </p>
 
     <ul class="bullets">
       <li><strong>Surface area reduction.</strong> Only client-safe columns exist in the view. If someone later adds an internal-only column to the underlying fact, it doesn't surface in the client report unless the view is deliberately changed.</li>
-      <li><strong>Semantic translation.</strong> Internal event names ("on expedition", and other internal terms) are projected to the public language a logistics customer recognises ("object in transit"). The translation lives in one place — the view — not scattered across DAX measures or report visuals.</li>
+      <li><strong>Semantic translation.</strong> Internal event names ("on expedition", and other internal terms) are projected to the public language a logistics customer recognises ("object in transit"). The translation lives in one place (the view), not scattered across DAX measures or report visuals.</li>
       <li><strong>Maintenance independence.</strong> Internal reports can keep evolving without risk of accidentally breaking the external one. The view is the explicit contract between the two worlds, and every schema change has to pass through it.</li>
     </ul>
 
     <div class="callout">
       <p class="ck">Why this matters</p>
-      <p>The architectural cost of the project wasn't the RLS rule — RLS rules are cheap. The cost was deciding <em>where the contract sits</em>. Putting it in a SQL view rather than a duplicated fact table meant we got separation without duplication, and the contract was a thing a reviewer could read in one place.</p>
+      <p>The architectural cost of the project wasn't the RLS rule. RLS rules are cheap. The cost was deciding <em>where the contract sits</em>. Putting it in a SQL view rather than a duplicated fact table meant we got separation without duplication, and the contract was a thing a reviewer could read in one place.</p>
     </div>
 
     <h2 class="h">Trade-offs and decisions</h2>
 
     <h3 class="sh">Asymmetric refresh, on purpose</h3>
     <p>
-      The fact view inherits the underlying internal facts' refresh cadence — multiple
+      The fact view inherits the underlying internal facts' refresh cadence: multiple
       times per day, driven by the existing QoS model. The bridge dim refreshes once a
       day. That asymmetry is deliberate: client-visible metrics need to be fresh because
       that's the product, while identity and contract assignments change slowly enough
@@ -463,7 +463,7 @@
       A new site user added at 10 a.m. doesn't see the report until the following
       day. In five years of production, no one has complained about this. Contract
       reassignments and new user onboarding aren't time-critical events on the client
-      side — the operationally critical thing is that <em>when</em> a user sees the
+      side. The operationally critical thing is that <em>when</em> a user sees the
       report, they see the right data.
     </p>
 
@@ -489,14 +489,14 @@
     <p>
       The report went into production in early 2021 and is still running. ~10,000+
       client companies have access today. The manual commercial-team workflow it
-      replaced — preparing client-by-client SLA summaries on weekly, monthly, and
-      on-request cadences — went away. The pattern has since been the template for
+      replaced (preparing client-by-client SLA summaries on weekly, monthly, and
+      on-request cadences) went away. The pattern has since been the template for
       every conversation about external Power BI delivery inside the company.
     </p>
 
     <h2 class="h">If I were rebuilding it today</h2>
     <p>
-      I'd keep Power BI Embedded for the rendering layer — the star model is clean,
+      I'd keep Power BI Embedded for the rendering layer: the star model is clean,
       the dataset isn't complex, and the architectural cost of migrating to a newer
       stack (dbt with warehouse-level row access policies, or Unity Catalog row
       filters) would outweigh the benefit. The model isn't fighting me, and the
@@ -507,11 +507,11 @@
       Where I would push further is <strong>near-real-time client-facing alerts</strong>.
       The current architecture is pull-based: clients log into the site and read.
       A natural extension would be proactive notification when a client's batch is
-      trending toward an SLA breach — the same monitoring-and-alerting pattern I
+      trending toward an SLA breach. That's the same monitoring-and-alerting pattern I
       later built on the internal operations side, pointed at a different audience.
       For 10k+ clients the implementation layer would need to be more robust than
-      what's sufficient for internal operations, but the architectural shape — event
-      detection, threshold logic, identity-aware delivery — carries across directly.
+      what's sufficient for internal operations, but the architectural shape (event
+      detection, threshold logic, identity-aware delivery) carries across directly.
     </p>
 
     <h2 class="h">What I'd take into the next role</h2>
@@ -529,19 +529,19 @@
       <div class="takeaway">
         <p class="num">03</p>
         <h4>One model, two roles &gt; two parallel reports</h4>
-        <p>Letting internal and external users share the same dataset under different RLS roles meant one lineage to reason about — and one set of measures to keep correct.</p>
+        <p>Letting internal and external users share the same dataset under different RLS roles meant one lineage to reason about, and one set of measures to keep correct.</p>
       </div>
       <div class="takeaway">
         <p class="num">04</p>
         <h4>Match the model to the access pattern</h4>
-        <p>The many-to-many bridge dim isn't elegant in a textbook sense — but it matches how corporate B2B access actually works. The mismatch was where most of the avoidable complexity lived.</p>
+        <p>The many-to-many bridge dim isn't elegant in a textbook sense, but it matches how corporate B2B access actually works. The mismatch was where most of the avoidable complexity lived.</p>
       </div>
     </div>
 
     <p>
       Most of the work in a project like this isn't the headline technology. It's
-      noticing the boring decisions — where the contract lives, which side owns the
-      refresh, what grain the access table needs to be at — and getting those right
+      noticing the boring decisions (where the contract lives, which side owns the
+      refresh, what grain the access table needs to be at) and getting those right
       so that the visible technology can stay simple. Five years on, the same
       pattern still answers every question I had at the start, and that's the
       strongest signal I have that it was the right shape.

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Case study: a single-page habitat planner for Pokémon Pokopia — a recommendation system on a self-healing dataset, built in vanilla JS with a Python scraper." />
+<meta name="description" content="Case study: a single-page habitat planner for Pokémon Pokopia. A recommendation system on a self-healing dataset, built in vanilla JS with a Python scraper." />
 <meta name="theme-color" content="#0a0f1a" />
 <meta property="og:title" content="Pokopia Habitat Planner — A Recommendation System on a Self-Healing Dataset" />
 <meta property="og:description" content="Side project: graph data model flattened into a one-glance ranked list, served as a single static file. Built in vanilla JS with a self-healing Python scraper." />
@@ -211,7 +211,7 @@
 
     <h1 class="title">Pokopia Habitat Planner — A recommendation system on a self-healing dataset.</h1>
     <p class="subtitle">
-      A side project for the Switch 2 game <em>Pokémon Pokopia</em>. Built out of necessity — but the
+      A side project for the Switch 2 game <em>Pokémon Pokopia</em>. Built out of necessity, but the
       underlying engineering is the same recommendation pattern I work with professionally.
       Different domain, identical problem at the right level of abstraction.
     </p>
@@ -229,8 +229,8 @@
 
     <p class="lead">
       In Pokémon Pokopia, up to four Pokémon share a habitat, and each Pokémon has a set of
-      "favourite" item categories. Picking a complementary roster — so the items you place
-      make as many residents happy as possible — is a small combinatorial puzzle. The app
+      "favourite" item categories. Picking a complementary roster (so the items you place
+      make as many residents happy as possible) is a small combinatorial puzzle. The app
       makes that puzzle solvable at a glance.
     </p>
 
@@ -256,7 +256,7 @@
     <h2 class="h">The brief</h2>
     <p>
       I needed to plan habitats efficiently in-game. The native interface tells you each
-      Pokémon's favourite categories one at a time — fine for two residents, painful at
+      Pokémon's favourite categories one at a time. Fine for two residents, painful at
       four. I wanted a tool that, given a roster, would surface the items most residents
       would care about, ranked by overlap, with light filtering on category and item type.
     </p>
@@ -264,7 +264,7 @@
     <h2 class="h">The data model</h2>
     <p>
       Underneath, the structure is a <strong>directed graph</strong> between three node
-      types — Pokémon, favourite categories, and items. A Pokémon points at its favourite
+      types: Pokémon, favourite categories, and items. A Pokémon points at its favourite
       categories; a category contains many items; an item belongs to one category and
       optionally one type tag (Decoration, Toy, Relaxation, Road, or Untagged).
     </p>
@@ -316,15 +316,15 @@
       What makes it self-healing:
     </p>
     <ul class="bullets">
-      <li><strong>SHA1-keyed local HTTP cache.</strong> Re-runs are idempotent and fast — re-fetching only happens when an upstream URL is genuinely new or has been invalidated.</li>
+      <li><strong>SHA1-keyed local HTTP cache.</strong> Re-runs are idempotent and fast; re-fetching only happens when an upstream URL is genuinely new or has been invalidated.</li>
       <li><strong>Clean separation between fetch and parse.</strong> The cache stores raw HTML pages keyed by URL hash. Schema changes on serebii would only break parsing, never the cache. I can iterate on parsers without re-hitting the network.</li>
       <li><strong>Edge-case handling baked in.</strong> Slugs containing dots (<code>mr.mime</code>, <code>mimejr.</code>), sprite filenames with form suffixes (<code>235-smearguru.png</code>), inconsistent page titles, and Pokopia's own sequential dex numbering (which differs from National Dex).</li>
-      <li><strong>Sprites downloaded once, served locally.</strong> No runtime dependency on serebii — the deployed app works offline once loaded.</li>
+      <li><strong>Sprites downloaded once, served locally.</strong> No runtime dependency on serebii; the deployed app works offline once loaded.</li>
     </ul>
 
     <div class="callout">
       <p class="ck">Why this matters</p>
-      <p>The same patterns I rely on at work: idempotent re-runs, separation of "fetch raw" from "parse structured", local caching for resilience. A side project is a legitimate place to practice the boring fundamentals that make data pipelines reliable. None of this is unique to Pokémon — it's how I'd build a scraper for anything.</p>
+      <p>The same patterns I rely on at work: idempotent re-runs, separation of "fetch raw" from "parse structured", local caching for resilience. A side project is a legitimate place to practice the boring fundamentals that make data pipelines reliable. None of this is unique to Pokémon; it's how I'd build a scraper for anything.</p>
     </div>
 
     <h2 class="h">Decisions worth mentioning</h2>
@@ -332,7 +332,7 @@
     <h3 class="sh">No framework, on purpose</h3>
     <p>
       A planner for a Pokémon game does not need React. The whole frontend is one
-      <code>index.html</code> with HTML, CSS, and vanilla JS in a single file — and would
+      <code>index.html</code> with HTML, CSS, and vanilla JS in a single file, and would
       have been bigger and slower in any framework. Static-first means it loads
       instantly, runs offline after first paint, and doesn't bit-rot when the framework
       ecosystem moves on. For a personal tool I want to still work in five years, that's
@@ -345,13 +345,13 @@
       lets me re-derive any view (which categories does this roster overlap on? which
       items appear in multiple categories? which Pokémon care about this specific item?)
       without restructuring the data. The UI flattens to a single ranked list because
-      that's the actionable answer. If I add a different view later — a per-Pokémon
-      view, a comparison view — the same data layer supports it.
+      that's the actionable answer. If I add a different view later (a per-Pokémon
+      view, a comparison view), the same data layer supports it.
     </p>
 
     <h3 class="sh">Local sprite copies, downloaded once</h3>
     <p>
-      I considered hot-linking sprites from serebii but didn't — both for politeness
+      I considered hot-linking sprites from serebii but didn't, both for politeness
       (don't be a freeloader on someone else's bandwidth) and resilience (if their CDN
       changes, my tool keeps working). 307 PNGs is ~30 MB; trivial to bundle.
     </p>

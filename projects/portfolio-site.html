@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Case study: how I built this portfolio site collaboratively with an AI agent — brief, process, decisions, and tradeoffs." />
+  <meta name="description" content="Case study: how I built this portfolio site collaboratively with an AI agent. Brief, process, decisions, and tradeoffs." />
   <meta name="theme-color" content="#0a0f1a" />
 
   <meta property="og:title" content="Portfolio Site — Built with AI · Case Study" />
@@ -223,7 +223,7 @@
     <p class="subtitle">
       A meta-project: shipping my own portfolio in a single afternoon by pairing
       with an AI coding agent. The output is what you're reading. The interesting
-      part is the process — what I owned, what I delegated, and what I edited.
+      part is the process: what I owned, what I delegated, and what I edited.
     </p>
 
     <div class="meta-row">
@@ -237,7 +237,7 @@
     </div>
 
     <p class="lead">
-      I work in data — pipelines, warehouses, dashboards. Frontend isn't my home turf.
+      I work in data: pipelines, warehouses, dashboards. Frontend isn't my home turf.
       But I needed a portfolio. So I treated it as a small experiment: <strong>how far
       can I get if I bring the same scoping, decision-making, and review discipline I
       apply at work, but use an AI agent to handle the implementation?</strong>
@@ -250,7 +250,7 @@
     </p>
     <ul class="bullets">
       <li>Translate <strong>8+ years across CTT, Audiogest, Multivision (Nokia), and EDP</strong> into something a recruiter can scan in 30 seconds.</li>
-      <li>Look the part for the role — technical, clean, not a generic template.</li>
+      <li>Look the part for the role: technical, clean, not a generic template.</li>
       <li>Be <strong>easy to extend</strong> as I add real projects (case studies, dashboards, pipelines).</li>
       <li>Deploy on GitHub Pages with no build step or framework lock-in.</li>
     </ul>
@@ -292,7 +292,7 @@
       <li class="step">
         <p class="step-meta">Step 1 · Scoping</p>
         <h3>Clarifying questions before code</h3>
-        <p>The agent didn't start writing. It read both my Portuguese and English CVs, then asked four targeted questions: language, design style, sections, and GitHub setup. That single round eliminated the most common AI failure mode — confidently building the wrong thing.</p>
+        <p>The agent didn't start writing. It read both my Portuguese and English CVs, then asked four targeted questions: language, design style, sections, and GitHub setup. That single round eliminated the most common AI failure mode: confidently building the wrong thing.</p>
       </li>
       <li class="step">
         <p class="step-meta">Step 2 · Design call</p>
@@ -302,12 +302,12 @@
       <li class="step">
         <p class="step-meta">Step 3 · Build</p>
         <h3>Structured generation, sectioned output</h3>
-        <p>Hero, About, Experience timeline, Skills, Projects, Interests, Contact — built in a single pass with a clear task list. Tech badges, key results, and stat numbers were sourced directly from the CVs (<em>10,000+ daily dashboard users</em>, <em>500+ stakeholders</em>, <em>2,500 hours saved/year</em>).</p>
+        <p>Hero, About, Experience timeline, Skills, Projects, Interests, Contact, all built in a single pass with a clear task list. Tech badges, key results, and stat numbers were sourced directly from the CVs (<em>10,000+ daily dashboard users</em>, <em>500+ stakeholders</em>, <em>2,500 hours saved/year</em>).</p>
       </li>
       <li class="step">
         <p class="step-meta">Step 4 · Verification</p>
         <h3>The honest part — verification didn't go cleanly</h3>
-        <p>The agent tried to render the site headlessly to verify, but the sandbox wedged on a backgrounded server. It told me — clearly. It then did a static review and flagged the limitation rather than claiming success. I noticed when I previewed it that the CSS wasn't loading, told the agent, and we diagnosed it: the preview pane sandboxes sibling files. Fix: inline the CSS, JS, and favicon as data URIs. One round.</p>
+        <p>The agent tried to render the site headlessly to verify, but the sandbox wedged on a backgrounded server. It told me, clearly. It then did a static review and flagged the limitation rather than claiming success. I noticed when I previewed it that the CSS wasn't loading, told the agent, and we diagnosed it: the preview pane sandboxes sibling files. Fix: inline the CSS, JS, and favicon as data URIs. One round.</p>
       </li>
       <li class="step">
         <p class="step-meta">Step 5 · This case study</p>
@@ -318,7 +318,7 @@
 
     <div class="callout">
       <p class="ck">Reflection</p>
-      <p>The agent saved me probably a week of front-end work. It didn't save me from the work that actually matters — deciding what to say, what to surface, and what to cut. That's still mine. The leverage is in the implementation, not the judgment.</p>
+      <p>The agent saved me probably a week of front-end work. It didn't save me from the work that actually matters: deciding what to say, what to surface, and what to cut. That's still mine. The leverage is in the implementation, not the judgment.</p>
     </div>
 
     <h2 class="h">Decisions worth mentioning</h2>
@@ -333,7 +333,7 @@
     <p>The hero stats (8+ years, 500+ stakeholders, 10k+ daily dashboard users, 2,500 hours/year automated) all come directly from my CV. No rounding up, no marketing inflation. If a recruiter asks me to back any of them, I can.</p>
 
     <h3 class="sh">Placeholder cards are a feature, not a bug</h3>
-    <p>The other three project slots are visibly empty by design — they signal "this portfolio is being actively built" rather than pretending to be more complete than it is. As I publish each case study, it replaces a placeholder.</p>
+    <p>The other three project slots are visibly empty by design, signaling "this portfolio is being actively built" rather than pretending to be more complete than it is. As I publish each case study, it replaces a placeholder.</p>
 
     <h2 class="h">Takeaways</h2>
     <div class="takeaways">
@@ -345,7 +345,7 @@
       <div class="takeaway">
         <p class="num">02</p>
         <h4>Pair, don't delegate</h4>
-        <p>Treat the agent like a fast colleague who needs context. Don't hand over judgment — hand over implementation.</p>
+        <p>Treat the agent like a fast colleague who needs context. Don't hand over judgment. Hand over implementation.</p>
       </div>
       <div class="takeaway">
         <p class="num">03</p>
@@ -364,9 +364,9 @@
       This site is v1. The next iterations are content, not code:
     </p>
     <ul class="bullets">
-      <li><strong>NPS deep-dive on a public dataset</strong> — replicating the methodology I used at CTT in a fully reproducible way.</li>
-      <li><strong>Quality of Service dashboard — case study</strong> — the design and DAX logic behind a dashboard used daily by 10k+ people, on non-sensitive sample data.</li>
-      <li><strong>SQL pattern cookbook</strong> — reusable patterns I've applied at work (SCDs, date dimensions, data quality checks).</li>
+      <li><strong>NPS deep-dive on a public dataset</strong>: replicating the methodology I used at CTT in a fully reproducible way.</li>
+      <li><strong>Quality of Service dashboard case study</strong>: the design and DAX logic behind a dashboard used daily by 10k+ people, on non-sensitive sample data.</li>
+      <li><strong>SQL pattern cookbook</strong>: reusable patterns I've applied at work (SCDs, date dimensions, data quality checks).</li>
       <li>Each replaces a placeholder card.</li>
     </ul>
 
