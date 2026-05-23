@@ -120,6 +120,21 @@
   }
   .slot .favs { font-size: 12px; color: var(--muted); line-height: 1.4; }
   .slot .empty-label { color: var(--muted); font-size: 13px; font-style: italic; }
+
+  /* Empty slot is a click-target that focuses the search input */
+  .slot.empty { cursor: pointer; transition: background 120ms ease, border-color 120ms ease, transform 120ms ease; }
+  .slot.empty:hover { background: var(--accent-soft); border-color: var(--accent-dark); transform: translateY(-1px); }
+  .slot.empty:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .slot.empty .add-icon {
+    width: 52px; height: 52px; flex-shrink: 0;
+    background: #fff; border: 1.5px dashed var(--border-strong); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent-dark); font-size: 28px; font-weight: 600; line-height: 1;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .slot.empty:hover .add-icon { background: #fefdf2; border-color: var(--accent-dark); }
+  .slot.empty .empty-hint { font-size: 11px; color: var(--accent-dark); font-weight: 500; margin-top: 1px; }
+
   .slot .remove {
     position: absolute; top: 6px; right: 8px;
     background: transparent; border: 0; color: var(--muted); cursor: pointer;
@@ -250,6 +265,14 @@
   .type-filter .chip[data-type="Road"] { border-color: #b89356; color: #7a5c16; }
   .type-filter .chip[data-type="Road"]:hover { background: #ebd9b3; }
   .type-filter .chip[data-type="Road"] .pill { background: #ebd9b3; color: #7a5c16; }
+  .type-filter .meta-sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 4px; }
+  .type-filter .meta-btn {
+    background: transparent; border: 0; color: var(--muted); cursor: pointer;
+    font-size: 12px; font-weight: 500; padding: 4px 8px; border-radius: 6px;
+    text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;
+  }
+  .type-filter .meta-btn:hover { color: var(--text); background: var(--accent-soft); text-decoration: none; }
+  .type-filter .meta-btn:disabled { opacity: 0.4; cursor: default; text-decoration: none; background: transparent; }
   .item .type-pill {
     display: inline-block; font-size: 10px; font-weight: 700;
     padding: 1px 7px; border-radius: 999px;
@@ -513,12 +536,39 @@
           </div>
         `;
       } else {
-        div.innerHTML = `<div class="empty-label">empty slot ${i + 1}</div>`;
+        div.classList.add("empty");
+        div.setAttribute("role", "button");
+        div.setAttribute("tabindex", "0");
+        div.setAttribute("aria-label", `Add a Pokémon to slot ${i + 1}`);
+        div.innerHTML = `
+          <div class="add-icon" aria-hidden="true">+</div>
+          <div class="text">
+            <div class="empty-label">empty slot ${i + 1}</div>
+            <div class="empty-hint">click to add</div>
+          </div>
+        `;
       }
       slotsEl.appendChild(div);
     }
     slotsEl.querySelectorAll("[data-remove]").forEach(el => {
-      el.addEventListener("click", () => removePokemon(el.getAttribute("data-remove")));
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        removePokemon(el.getAttribute("data-remove"));
+      });
+    });
+    // Clicking an empty slot focuses the search input (which opens the dropdown).
+    const focusAddInput = () => {
+      const inp = $("add-input");
+      if (inp) { inp.focus(); inp.select && inp.select(); }
+    };
+    slotsEl.querySelectorAll(".slot.empty").forEach(el => {
+      el.addEventListener("click", focusAddInput);
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          focusAddInput();
+        }
+      });
     });
 
     // habitat badge
@@ -855,13 +905,48 @@
       if (t !== UNTAGGED) chip.setAttribute("data-type", t);
       const displayName = t === UNTAGGED ? "Untagged" : t;
       chip.innerHTML = `${escapeHTML(displayName)} <span class="pill">${n}</span>`;
-      chip.addEventListener("click", () => {
-        if (STATE.typeFilter.has(t)) STATE.typeFilter.delete(t);
-        else STATE.typeFilter.add(t);
+      chip.title = `Shift-click to show only ${displayName}`;
+      chip.addEventListener("click", (e) => {
+        if (e.shiftKey) {
+          // Shift-click = show only this type (turn everything else off)
+          STATE.typeFilter = new Set([t]);
+        } else if (STATE.typeFilter.has(t)) {
+          STATE.typeFilter.delete(t);
+        } else {
+          STATE.typeFilter.add(t);
+        }
         renderItems();
       });
       host.appendChild(chip);
     }
+
+    // Utility buttons: deselect-all (so the user can then click one) and select-all.
+    const sep = document.createElement("span");
+    sep.className = "meta-sep";
+    host.appendChild(sep);
+
+    const noneBtn = document.createElement("button");
+    noneBtn.className = "meta-btn";
+    noneBtn.type = "button";
+    noneBtn.textContent = "Deselect all";
+    noneBtn.title = "Turn off every type, then click one to show only that type";
+    noneBtn.disabled = STATE.typeFilter.size === 0;
+    noneBtn.addEventListener("click", () => {
+      STATE.typeFilter = new Set();
+      renderItems();
+    });
+    host.appendChild(noneBtn);
+
+    const allBtn = document.createElement("button");
+    allBtn.className = "meta-btn";
+    allBtn.type = "button";
+    allBtn.textContent = "Select all";
+    allBtn.disabled = STATE.typeFilter.size === sortedTypes.length;
+    allBtn.addEventListener("click", () => {
+      STATE.typeFilter = new Set(sortedTypes);
+      renderItems();
+    });
+    host.appendChild(allBtn);
   }
 
   function renderItems() {
