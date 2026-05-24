@@ -502,6 +502,33 @@
       the rest of the day's flows kept running.
     </p>
 
+    <h3 class="sh">Why the reporting dataset is decoupled from the reports</h3>
+    <p>
+      The reporting dataset and the consuming reports were published separately, with
+      the reports live-connecting to the dataset rather than embedding their own copy
+      of the model. Three reasons made this the right shape.
+    </p>
+    <p>
+      First, corruption resilience. Early in my time at CTT we'd had a single-pbix
+      file (dataset and visuals embedded together) corrupt in a way that took both
+      layers down at the same time. Decoupling them put the model and the report on
+      independent failure paths: a problem with one no longer cascaded into the other.
+    </p>
+    <p>
+      Second, deployment-cadence decoupling. Visual changes (a chart, a layout, a
+      colour, a tooltip) could be published without re-publishing the dataset. On a
+      single-pbix file every report change re-uploads the dataset and re-triggers its
+      refresh cycle, which makes visual iteration slow and expensive to ship. With
+      the dataset decoupled, the visual layer iterated at its own cadence without
+      paying refresh cost on every change.
+    </p>
+    <p>
+      Third, model reuse. A second or third report could live-connect to the same
+      reporting dataset without re-modelling. For this build that ended up being one
+      report rather than several, but the pattern kept the option open at no extra
+      cost.
+    </p>
+
     <h3 class="sh">When one alarm outgrew the CSV-write action</h3>
     <p>
       One of the eight alarms returned a result set large enough to exceed the
