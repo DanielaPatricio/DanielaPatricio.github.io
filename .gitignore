@@ -15,3 +15,7 @@ projects/pokopia/data.json
 Application_*.md
 Daniela_Patricio_Cover_Letter_*.pdf
 Guia_Aprendizagem_*.md
+
+# Employer-specific cover letter sources — keep local, never in the public repo.
+# The CV sources (cv-en.html, cv-pt.html) are fine to publish; cover letters are not.
+cv-src/cover-letter-*.html
