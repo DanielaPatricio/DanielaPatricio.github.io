@@ -9,3 +9,9 @@ node_modules/
 projects/pokopia/.cache/
 projects/pokopia/__pycache__/
 projects/pokopia/data.json
+
+# Private job-application materials — NEVER publish (this is a public GitHub Pages repo)
+# Contains salary strategy, forecasts, employer negotiation notes, and per-employer cover letters.
+Application_*.md
+Daniela_Patricio_Cover_Letter_*.pdf
+Guia_Aprendizagem_*.md

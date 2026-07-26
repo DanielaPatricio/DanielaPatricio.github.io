@@ -428,16 +428,18 @@
           (and most of the top 10 overall), supporting decision-making across 20+ departments
           and 500+ stakeholders, including executive leadership. Day-to-day toolkit:
           <strong>Power BI</strong>, <strong>SQL Server</strong>, <strong>Azure Databricks</strong>
-          (including <strong>Databricks SQL</strong>), <strong>Power Automate</strong>, and <strong>Python</strong>.
-          I have a deeper Data Engineering background (pipelines, ETL, warehousing) that I bring in when the analyst
-          work calls for it.
+          (including <strong>Databricks SQL</strong>) and <strong>Power Automate</strong>; earlier
+          in the same role, <strong>PySpark</strong> on the medallion pipelines. Years of analysing
+          <strong>event-level operational data</strong> across a national distribution network:
+          sequence, stage-by-stage drop-off, SLA per hop.
         </p>
         <p>
           When I onboard a new domain, I tend to map it onto the previous one at the
           <strong>data-model level</strong>. At CTT, postal logistics became the electrical
-          distribution work I'd just left: sorting centers as substations, mailmen as meters.
-          The same reflex made event-based data feel natural: both domains run on time-series
-          events on a topology.
+          distribution network I knew from EDP: sorting centers as substations, mailmen as meters.
+          That isn't a metaphor. Both industries produce <strong>event and state data on a
+          redundant distribution network</strong>, and both ask the same questions of it: uptime,
+          incidents, loss per node.
         </p>
         <p>
           My work is about <strong>helping people do more fulfilling tasks by automating information delivery</strong>:
@@ -480,8 +482,8 @@
           <h3 class="tl-role">Senior BI Engineer</h3>
           <p class="tl-org">CTT — Correios de Portugal</p>
           <ul class="tl-bullets">
-            <li>Built and maintained data products on a <strong>medallion-style architecture</strong> using Azure Data Factory, Azure Data Lake, Databricks, and SQL Server (Databricks SQL for internal self-service). Authored new extraction pipelines and dimensions, plus extensions to existing fact and dimension tables.</li>
-            <li><strong>Co-owned the operational data pipeline</strong> sourcing distribution operations data into Power BI and broader analytics, with <strong>Grafana</strong> for monitoring + stage-by-stage data reconciliation, plus failed-run triage, debugging, and ongoing reliability.</li>
+            <li>Built and maintained data products on a <strong>medallion-style architecture</strong> using Azure Data Factory, Azure Data Lake, Databricks, and SQL Server (Databricks SQL for internal self-service). Authored <strong>Databricks notebooks (PySpark and SQL)</strong> reading parquet landed in the lake by Data Factory and transforming it from raw through stage to curated, plus new dimensions and extensions to existing fact and dimension tables.</li>
+            <li><strong>Co-owned the operational data pipeline</strong> sourcing <strong>event-level delivery data</strong> (every object emits events at each network stage) into Power BI and broader analytics, with <strong>Grafana</strong> for monitoring + stage-by-stage data reconciliation, plus failed-run triage, debugging, and ongoing reliability.</li>
             <li>Built <strong>centralised data warehouse structures</strong> supporting decision-making across 20+ departments and 500+ stakeholders, including executive leadership.</li>
             <li>Designed and deployed an <strong>Operational Alarms system</strong> with near real-time data streams (Power Automate) supporting proactive service-quality actions.</li>
           </ul>
@@ -494,7 +496,7 @@
             </ul>
           </div>
           <div class="tl-tech">
-            <span>Power BI</span><span>DAX</span><span>Power Query M</span><span>SQL</span><span>SSMS</span><span>SSAS</span><span>Azure Databricks</span><span>Databricks SQL</span><span>Azure Data Factory</span><span>Power Automate</span><span>Grafana</span><span>Python</span><span>Agile (Kanban)</span>
+            <span>Power BI</span><span>DAX</span><span>Power Query M</span><span>SQL</span><span>SSMS</span><span>SSAS</span><span>Azure Databricks</span><span>Databricks SQL</span><span>Azure Data Factory</span><span>Power Automate</span><span>Grafana</span><span>Python</span><span>PySpark</span><span>Azure DevOps</span><span>Agile (Kanban)</span>
           </div>
         </div>
       </li>
@@ -561,8 +563,8 @@
           <h3 class="tl-role">Business Intelligence &amp; Contract Management Intern</h3>
           <p class="tl-org">EDP Distribuição</p>
           <ul class="tl-bullets">
+            <li>Built <strong>OBIEE dashboards on the telecontrol grid</strong> that remotely operates and monitors substations and transformation posts: <strong>substation downtime</strong>, <strong>incidents by geographical area</strong>, and grid-state KPIs used by management and support teams.</li>
             <li>Supported optimization of Contract Management processes by standardizing procedures and improving information flow.</li>
-            <li>Created and maintained dashboards and reports in Oracle Business Intelligence (OBIEE) for management monitoring.</li>
             <li>Designed and maintained the SharePoint site for Contract Management, enhancing document accessibility and version control.</li>
           </ul>
           <div class="tl-tech">
@@ -627,6 +629,7 @@
           <span class="chip">SSMS</span>
           <span class="chip">SSAS</span>
           <span class="chip">Python</span>
+          <span class="chip">PySpark</span>
           <span class="chip">Excel (VBA)</span>
           <span class="chip">Git</span>
           <span class="chip">Grafana</span>
@@ -644,6 +647,7 @@
           <span class="chip">Data Governance</span>
           <span class="chip">Agile (Kanban)</span>
           <span class="chip">CI/CD</span>
+          <span class="chip">Azure DevOps</span>
         </div>
       </div>
 
@@ -815,7 +819,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="mono">© <span id="year"></span> Daniela Patrício · Built with care in Lisbon</span>
+      <span class="mono">© <span id="year"></span> Daniela Patrício · Built with care in Mafra</span>
       <span class="mono footer-stamp">v1.0 · last updated <span id="updated"></span></span>
     </div>
   </footer>

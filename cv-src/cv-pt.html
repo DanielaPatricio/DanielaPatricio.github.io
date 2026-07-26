@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>Daniela Assunção Santana Patrício — Senior BI Engineer</title>
+<style>
+@page { size: A4; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-family: "Inter", sans-serif; }
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #334155;
+  font-size: 8.4pt;
+  line-height: 1.40;
+}
+
+/* ---------- page scaffold ---------- */
+.page {
+  position: relative;
+  width: 595.92pt;
+  height: 842.88pt;
+  overflow: hidden;
+}
+.page + .page { page-break-before: always; }
+
+.sidebar {
+  position: absolute;
+  top: 0; left: 0;
+  width: 213pt;
+  height: 842.88pt;
+  background: #F8FAFC;
+  border-right: 0.8pt solid #E2E8F0;
+  padding: 34pt 24pt 30pt 34.1pt;
+}
+
+.main {
+  position: absolute;
+  top: 0; left: 240.7pt;
+  width: 321pt;
+  padding-top: 34pt;
+}
+
+/* ---------- identity block ---------- */
+.name {
+  font-size: 17pt;
+  font-weight: 700;
+  line-height: 17.6pt;
+  letter-spacing: -0.2pt;
+  color: #0F172A;
+}
+.name .accent { color: #0891B2; }
+
+.tagline {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8pt;
+  color: #64748B;
+  margin-top: 9pt;
+  letter-spacing: -0.1pt;
+}
+
+.years {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.8pt;
+  color: #0891B2;
+  margin-top: 8pt;
+}
+
+.contacts { margin-top: 9pt; }
+.contact {
+  font-size: 8pt;
+  color: #334155;
+  margin-bottom: 5.5pt;
+  padding-left: 13.8pt;
+  position: relative;
+  line-height: 1.25;
+}
+.contact svg {
+  position: absolute;
+  left: 0; top: 0.6pt;
+  width: 8.4pt; height: 8.4pt;
+}
+
+/* ---------- sidebar sections ---------- */
+.side-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.2pt;
+  letter-spacing: 1.15pt;
+  color: #0891B2;
+  margin-top: 12pt;
+  padding-bottom: 4pt;
+  border-bottom: 0.8pt solid #CFFAFE;
+  width: 154.5pt;
+}
+.side-body { margin-top: 6pt; font-size: 8pt; line-height: 1.44; }
+.side-body strong { color: #0F172A; font-weight: 600; }
+
+.skill-group { margin-bottom: 6pt; }
+.skill-group .h {
+  font-size: 8pt;
+  font-weight: 600;
+  color: #0F172A;
+  margin-bottom: 1.5pt;
+}
+.skill-group .d { font-size: 8pt; color: #475569; line-height: 1.40; }
+
+.lang { font-size: 8pt; }
+.lang .lvl { font-family: "JetBrains Mono", monospace; font-size: 7.2pt; color: #0891B2; }
+
+.work-list { font-size: 8pt; line-height: 1.40; color: #475569; }
+.work-list .u {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.2pt;
+  color: #0891B2;
+  display: block;
+  margin-bottom: 3.5pt;
+}
+.work-list div.item { margin-bottom: 2.5pt; padding-left: 7pt; text-indent: -7pt; }
+
+.interests { font-size: 8pt; line-height: 1.45; color: #475569; }
+
+/* ---------- main sections ---------- */
+.sec-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8pt;
+  letter-spacing: 1.5pt;
+  color: #0891B2;
+  padding-bottom: 5.5pt;
+  border-bottom: 0.8pt solid #0891B2;
+}
+
+.job { margin-top: 13pt; }
+.job:first-of-type { margin-top: 12pt; }
+
+.job-title {
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: #0F172A;
+  letter-spacing: -0.15pt;
+}
+.job-meta { margin-top: 3pt; margin-bottom: 6.5pt; }
+.job-meta .co {
+  font-size: 8.8pt;
+  font-style: italic;
+  color: #334155;
+}
+.job-meta .mt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.5pt;
+  color: #94A3B8;
+  padding-left: 3pt;
+}
+
+ul.bullets { list-style: none; }
+ul.bullets li {
+  position: relative;
+  padding-left: 10.3pt;
+  margin-bottom: 5pt;
+  line-height: 11.8pt;
+  color: #334155;
+}
+ul.bullets li::before {
+  content: "\25B8";
+  position: absolute;
+  left: 0;
+  color: #0891B2;
+  font-size: 7.8pt;
+}
+strong { font-weight: 600; color: #0F172A; }
+code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.4pt;
+  color: #334155;
+}
+
+/* ---------- key results ---------- */
+.kr {
+  background: #ECFEFF;
+  border-left: 1.5pt solid #0891B2;
+  padding: 8pt 10pt 7pt 9pt;
+  margin-top: 9pt;
+}
+.kr .lbl {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 6.8pt;
+  letter-spacing: 1.1pt;
+  color: #0891B2;
+  margin-bottom: 5.5pt;
+}
+.kr ul { list-style: none; }
+.kr li {
+  position: relative;
+  padding-left: 10pt;
+  margin-bottom: 4.5pt;
+  font-size: 8.1pt;
+  line-height: 11.4pt;
+}
+.kr li:last-child { margin-bottom: 0; }
+.kr li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #0891B2;
+  font-size: 7.6pt;
+}
+
+/* ---------- tags ---------- */
+.tags { margin-top: 8pt; }
+.tag {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 6.8pt;
+  color: #475569;
+  border: 0.6pt solid #E2E8F0;
+  border-radius: 2.5pt;
+  padding: 2pt 4.5pt;
+  margin: 0 3pt 3.5pt 0;
+  line-height: 1;
+}
+
+/* ---------- agentic AI panel ---------- */
+.aibox {
+  margin-top: 20pt;
+  border: 0.6pt solid #E2E8F0;
+  border-radius: 3pt;
+  padding: 9pt 11pt 8pt 11pt;
+}
+.aibox .lbl {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 6.8pt;
+  letter-spacing: 1.1pt;
+  color: #0891B2;
+  margin-bottom: 6pt;
+}
+.aibox p { font-size: 8.1pt; line-height: 11.4pt; margin-bottom: 5pt; }
+.aibox p:last-child { margin-bottom: 0; }
+
+/* ---------- education ---------- */
+.edu { margin-top: 11pt; }
+.edu .deg { font-size: 9.4pt; font-weight: 600; color: #0F172A; }
+.edu .spec { font-size: 8.2pt; font-style: italic; color: #334155; margin-top: 2.5pt; }
+.edu .mt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.5pt;
+  color: #94A3B8;
+  margin-top: 3pt;
+}
+.edu .courses {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.2pt;
+  color: #64748B;
+  margin-top: 4.5pt;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================= PÁGINA 1 ============================= -->
+<div class="page">
+  <div class="sidebar">
+    <div class="name"><span class="accent">Daniela</span><br>Assunção<br>Santana<br><span class="accent">Patrício</span></div>
+    <div class="tagline">Senior BI Engineer ·<br>background em Data Engineering</div>
+    <div class="years">&#8250; 8+ anos</div>
+
+    <div class="contacts">
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6"/></svg>
+        daniela.a.s.patricio@gmail.com
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M7 10.5v6.5M7 7.2v0.1M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>
+        linkedin.com/in/danielaaspatricio
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20"/></svg>
+        danielapatricio.github.io
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Lisboa, Portugal
+      </div>
+    </div>
+
+    <div class="side-label">PERFIL</div>
+    <div class="side-body">
+      <strong>Senior BI Engineer</strong> com raízes profundas em Data Engineering e 8+ anos a construir dashboards, reporting automatizado e a infraestrutura SQL/ETL subjacente. Atualmente focada em <strong>Power BI, SQL Server, Azure Databricks</strong> (incl. <strong>Databricks SQL</strong>) e <strong>Power Automate</strong>; anteriormente na mesma função, <strong>PySpark</strong> nos pipelines medallion. Anos de análise de <strong>dados operacionais ao nível do evento</strong> numa rede nacional de distribuição: sequência, drop-off etapa-a-etapa, SLA em cada passagem.
+    </div>
+
+    <div class="side-label">COMPETÊNCIAS TÉCNICAS</div>
+    <div class="side-body">
+      <div class="skill-group">
+        <div class="h">Visualização &amp; Reporting</div>
+        <div class="d">Power BI, Qlik; adaptação rápida a outras ferramentas de BI (ex. Tableau).</div>
+      </div>
+      <div class="skill-group">
+        <div class="h">Data Engineering &amp; ETL</div>
+        <div class="d">SQL, Azure Databricks (incl. Databricks SQL), Azure Data Factory, Power Automate, SSMS, SSAS, Excel (VBA), Python, PySpark, Git, Azure DevOps.</div>
+      </div>
+      <div class="skill-group">
+        <div class="h">Metodologias</div>
+        <div class="d">Agile (Kanban), CI/CD, Data Warehousing, Data Modeling, Data Governance.</div>
+      </div>
+      <div class="skill-group" style="margin-bottom:0">
+        <div class="h">Agentic AI</div>
+        <div class="d">Claude Code, Cursor, Microsoft Copilot, Gemini, ChatGPT.</div>
+      </div>
+    </div>
+
+    <div class="side-label">IDIOMAS</div>
+    <div class="side-body">
+      <div class="lang">Inglês <span class="lvl">C1</span> · Espanhol <span class="lvl">B1</span></div>
+    </div>
+
+    <div class="side-label">TRABALHOS SELECIONADOS</div>
+    <div class="side-body">
+      <div class="work-list">
+        <span class="u">danielapatricio.github.io</span>
+        <div class="item">· Power BI RLS para 10 000+ clientes B2B</div>
+        <div class="item">· Sistema de Alarmes Operacionais</div>
+        <div class="item">· Pokopia Habitat Planner</div>
+      </div>
+    </div>
+
+    <div class="side-label">INTERESSES</div>
+    <div class="side-body">
+      <div class="interests">Treino do beagle · plantas · cultura japonesa · videojogos · ponto cruz.</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="sec-label">EXPERIÊNCIA PROFISSIONAL</div>
+
+    <div class="job">
+      <div class="job-title">Senior BI Engineer</div>
+      <div class="job-meta"><span class="co">CTT — Correios de Portugal</span><span class="mt">· Lisboa · Set 2020 — Presente</span></div>
+      <ul class="bullets">
+        <li>Construí e mantive data products numa <strong>arquitetura medallion</strong> com Azure Data Factory, Azure Data Lake, Databricks e SQL Server (Databricks SQL para self-service interno). Desenvolvi <strong>notebooks Databricks (PySpark e SQL)</strong> que leem o parquet aterrado no lake pelo Data Factory e o transformam de raw para stage e curated, mais novas dimensões e extensões a tabelas de facto e dimensão existentes.</li>
+        <li><strong>Co-proprietária do pipeline de dados operacionais</strong> que integra <strong>dados de entrega ao nível do evento</strong> (cada objeto emite eventos em cada etapa da rede) em Power BI e analytics mais amplo, com <strong>Grafana</strong> para monitorização + reconciliação etapa-a-etapa, mais triagem de execuções falhadas, debugging e fiabilidade contínua.</li>
+        <li>Construí <strong>estruturas centralizadas de data warehouse</strong> que suportam tomada de decisão em <strong>20+ departamentos e 500+ stakeholders</strong>, incluindo liderança executiva.</li>
+        <li>Concebi e implementei um <strong>sistema de Alarmes Operacionais</strong> com streams de dados quase em tempo real (Power Automate), que apoia ações proativas de qualidade de serviço.</li>
+      </ul>
+      <div class="kr">
+        <div class="lbl">PRINCIPAIS RESULTADOS</div>
+        <ul>
+          <li>Arquitetei <strong>Row-Level Security em Power BI</strong> para o data product multi-tenant de Qualidade de Serviço, integrado end-to-end no website da CTT: dimensão custom utilizador-para-dados via <code>USERPRINCIPALNAME()</code>, coordenada com a autenticação do site. <strong>10 000+ utilizadores</strong> à data de desenvolvimento.</li>
+          <li>Autoria dos <strong>relatórios Power BI #1 e #2 mais visualizados em toda a CTT</strong> (e da maioria do top 10) no servidor Power BI da empresa.</li>
+          <li>Dashboard de <strong>Net Promoter Score (NPS)</strong> utilizado pela liderança executiva e acionistas para orientar a estratégia.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query M</span><span class="tag">SQL</span><span class="tag">SSMS</span><span class="tag">SSAS</span><span class="tag">Azure Databricks</span><span class="tag">Databricks SQL</span><span class="tag">Azure Data Factory</span><span class="tag">Power Automate</span><span class="tag">Grafana</span><span class="tag">Python</span><span class="tag">PySpark</span><span class="tag">Azure DevOps</span><span class="tag">Agile (Kanban)</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Data Analyst</div>
+      <div class="job-meta"><span class="co">Audiogest / PassMúsica</span><span class="mt">· Lisboa · Jan 2019 — Ago 2020</span></div>
+      <ul class="bullets">
+        <li>Desenhei, otimizei e mantive <strong>processos ETL baseados em SQL</strong> e modelos de dados Power BI, centralizando dados de Gestão, Operações, RH e Jurídico.</li>
+        <li>Automatizei pipelines de reporting e ciclos de refresh, melhorando fiabilidade e reduzindo manutenção manual.</li>
+        <li>Defini e documentei KPIs e estruturas de dados em colaboração com stakeholders, alinhando analytics com objetivos de negócio.</li>
+      </ul>
+      <div class="kr">
+        <div class="lbl">PRINCIPAIS RESULTADOS</div>
+        <ul>
+          <li>Reduzi carga de reporting em <strong>100+ horas/ano</strong> através de otimização SQL e automação.</li>
+          <li>Otimizei processos de dados de <strong>Distribuição de Direitos</strong>, melhorando precisão e pontualidade no reporting de gestão.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query M</span><span class="tag">SQL</span><span class="tag">Excel (VBA)</span><span class="tag">Qlik</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= PÁGINA 2 ============================= -->
+<div class="page">
+  <div class="sidebar">
+    <div class="name"><span class="accent">Daniela</span><br>Assunção<br>Santana<br><span class="accent">Patrício</span></div>
+    <div class="tagline">Senior BI Engineer ·<br>background em Data Engineering</div>
+    <div class="years">&#8250; 8+ anos</div>
+
+    <div class="contacts">
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6"/></svg>
+        daniela.a.s.patricio@gmail.com
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M7 10.5v6.5M7 7.2v0.1M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>
+        linkedin.com/in/danielaaspatricio
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20"/></svg>
+        danielapatricio.github.io
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="sec-label">EXPERIÊNCIA PROFISSIONAL (CONT.)</div>
+
+    <div class="job">
+      <div class="job-title">Business Intelligence Consultant</div>
+      <div class="job-meta"><span class="co">Multivision (projeto na Nokia)</span><span class="mt">· Lisboa · Mar 2018 — Ago 2018</span></div>
+      <ul class="bullets">
+        <li>Colaborei com equipas de Vendas, RH e Produto para conceber dashboards e datasets Power BI que apoiam decisões ad-hoc e recorrentes.</li>
+        <li>Administrei o workspace SharePoint da equipa, gerindo datasets, acessos e disponibilidade de dados para stakeholders.</li>
+      </ul>
+      <div class="kr">
+        <div class="lbl">PRINCIPAL RESULTADO</div>
+        <ul>
+          <li>Automatizei um processo mensal de reporting muito manual, poupando <strong>~2 500 horas/ano em 5 equipas</strong>.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query M</span><span class="tag">SharePoint</span><span class="tag">Agile (Kanban)</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Estagiária em Business Intelligence &amp; Gestão de Contratos</div>
+      <div class="job-meta"><span class="co">EDP Distribuição</span><span class="mt">· Lisboa · Jun 2016 — Mar 2017</span></div>
+      <ul class="bullets">
+        <li>Construí <strong>dashboards OBIEE na rede de telecomando</strong> que opera e monitoriza remotamente subestações e postos de transformação: <strong>tempo de indisponibilidade das subestações</strong>, <strong>incidentes por área geográfica</strong> e KPIs de estado da rede utilizados pelas equipas de gestão e suporte.</li>
+        <li>Apoiei a otimização de processos de Gestão de Contratos através da normalização de procedimentos e melhoria do fluxo de informação.</li>
+        <li>Concebi e mantive o site SharePoint para Gestão de Contratos, melhorando acessibilidade documental e controlo de versões.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">OBIEE</span><span class="tag">SharePoint</span><span class="tag">ServiceNow</span>
+      </div>
+    </div>
+
+    <div style="margin-top:20pt">
+      <div class="sec-label">FORMAÇÃO ACADÉMICA</div>
+
+      <div class="edu">
+        <div class="deg">Pós-Graduação em Gestão de Informação</div>
+        <div class="spec">Especialização em Business Intelligence &amp; Gestão do Conhecimento</div>
+        <div class="mt">NOVA IMS · Lisboa · Set 2019 — Set 2020</div>
+        <div class="courses">Cadeiras relevantes: Business Intelligence, Data Mining, Gestão do Conhecimento, Big Data Analytics, Visualização de Dados.</div>
+      </div>
+
+      <div class="edu">
+        <div class="deg">Mestrado em Marketing</div>
+        <div class="mt">Universidade do Algarve, Faro · Out 2010 — Dez 2015</div>
+      </div>
+
+      <div class="edu">
+        <div class="deg">Licenciatura em Gestão Hoteleira</div>
+        <div class="mt">Universidade do Algarve, Faro · Set 2007 — Set 2010</div>
+      </div>
+    </div>
+
+    <div class="aibox">
+      <div class="lbl">AGENTIC AI — CONTEXTOS DE UTILIZAÇÃO</div>
+      <p><strong>Profissional · Microsoft Copilot:</strong> exploração e análise em modo chat, além de integrações ativas no Microsoft 365: Power BI (medidas DAX, Power Query M, síntese de insights), Excel e Outlook.</p>
+      <p><strong>Projetos pessoais · Claude Code &amp; Cursor:</strong> pair-programming com AI em SQL, Python e pipelines ETL: refactoring, documentação e testes assistidos.</p>
+      <p><strong>Exploração · Gemini &amp; ChatGPT:</strong> prototipagem rápida, code review e exploração de padrões em dados.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
