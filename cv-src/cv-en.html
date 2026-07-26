@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Daniela Assunção Santana Patrício — Senior BI Engineer</title>
+<title>Daniela Assunção Santana Patrício — Senior BI Engineer (Engineering)</title>
 <style>
 @page { size: A4; margin: 0; }
 
@@ -152,6 +152,12 @@ body {
   color: #94A3B8;
   padding-left: 3pt;
 }
+.job-meta .note {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7.2pt;
+  color: #94A3B8;
+  margin-top: 2.5pt;
+}
 
 ul.bullets { list-style: none; }
 ul.bullets li {
@@ -286,18 +292,18 @@ code {
 
     <div class="side-label">PROFILE</div>
     <div class="side-body">
-      <strong>Senior BI Engineer</strong> with deep Data Engineering roots, with 8+ years building dashboards, automated reporting, and the SQL/ETL infrastructure beneath them. Currently focused on <strong>Power BI, SQL Server, Azure Databricks</strong> (incl. <strong>Databricks SQL</strong>) and <strong>Power Automate</strong>; earlier in the same role, <strong>PySpark</strong> on the medallion pipelines. Years of analysing <strong>event-level operational data</strong> across a national distribution network: sequence, stage-by-stage drop-off, SLA per hop.
+      <strong>Senior BI Engineer</strong> with 8+ years on the <strong>SQL/ETL infrastructure beneath analytics</strong>: medallion pipelines, dimensional models and row-level security, plus the reporting layer they feed. Currently in <strong>Power BI, SQL Server</strong> and <strong>Azure Databricks</strong> (incl. <strong>Databricks SQL</strong>); earlier in the same role, <strong>PySpark</strong> on the medallion pipelines. Years of analysing <strong>event-level operational data</strong> across a national distribution network: sequence, stage-by-stage drop-off, SLA per hop.
     </div>
 
     <div class="side-label">TECHNICAL SKILLS</div>
     <div class="side-body">
       <div class="skill-group">
-        <div class="h">Visualisation &amp; Reporting</div>
-        <div class="d">Power BI, Qlik; quick adaptation to other BI tools (e.g. Tableau).</div>
-      </div>
-      <div class="skill-group">
         <div class="h">Data Engineering &amp; ETL</div>
         <div class="d">SQL, Azure Databricks (incl. Databricks SQL), Azure Data Factory, Power Automate, SSMS, SSAS, Excel (VBA), Python, PySpark, Git, Azure DevOps.</div>
+      </div>
+      <div class="skill-group">
+        <div class="h">Visualisation &amp; Reporting</div>
+        <div class="d">Power BI, Qlik; quick adaptation to other BI tools (e.g. Tableau).</div>
       </div>
       <div class="skill-group">
         <div class="h">Methodologies</div>
@@ -335,19 +341,18 @@ code {
 
     <div class="job">
       <div class="job-title">Senior BI Engineer</div>
-      <div class="job-meta"><span class="co">CTT — Correios de Portugal</span><span class="mt">· Lisbon · Sep 2020 — Present</span></div>
+      <div class="job-meta"><span class="co">CTT — Correios de Portugal</span><span class="mt">· Lisbon · Sep 2020 — Present</span><div class="note">National postal operator</div></div>
       <ul class="bullets">
         <li>Built and maintained data products on a <strong>medallion-style architecture</strong> using Azure Data Factory, Azure Data Lake, Databricks, and SQL Server (Databricks SQL for internal self-service). Authored <strong>Databricks notebooks (PySpark and SQL)</strong> reading parquet landed in the lake by Data Factory and transforming it from raw through stage to curated, plus new dimensions and extensions to existing fact and dimension tables.</li>
         <li><strong>Co-owned the operational data pipeline</strong> sourcing <strong>event-level delivery data</strong> (every object emits events at each network stage) into Power BI and broader analytics, with <strong>Grafana</strong> for monitoring + stage-by-stage reconciliation, plus failed-run triage, debugging, and ongoing reliability.</li>
         <li>Built <strong>centralised data warehouse structures</strong> supporting decision-making across <strong>20+ departments and 500+ stakeholders</strong>, including executive leadership.</li>
-        <li>Designed and deployed an <strong>Operational Alarms system</strong> with near real-time data streams (Power Automate) supporting proactive service-quality actions.</li>
       </ul>
       <div class="kr">
         <div class="lbl">KEY RESULTS</div>
         <ul>
           <li>Architected <strong>Power BI Row-Level Security</strong> for the Quality of Service multi-tenant data product, embedded end-to-end on CTT's website: custom user-to-data dimension via <code>USERPRINCIPALNAME()</code>, coordinated with site authentication. <strong>10,000+ users</strong> at time of build.</li>
+          <li>Shipped the <strong>Operational Alarms system</strong> with no Data Factory, no writable database and no native partial refresh in Power BI: eight alarms on one shared report, daily-fresh, orchestrated in Power Automate with a custom Azure AD app to connect the pieces.</li>
           <li>Authored the <strong>#1 and #2 most-viewed Power BI reports across CTT</strong> (and most of the top 10 overall) on the company's Power BI server.</li>
-          <li><strong>Net Promoter Score (NPS)</strong> dashboard used by executive leadership and shareholders to guide strategy.</li>
         </ul>
       </div>
       <div class="tags">
@@ -357,7 +362,7 @@ code {
 
     <div class="job">
       <div class="job-title">Data Analyst</div>
-      <div class="job-meta"><span class="co">Audiogest / PassMúsica</span><span class="mt">· Lisbon · Jan 2019 — Aug 2020</span></div>
+      <div class="job-meta"><span class="co">Audiogest / PassMúsica</span><span class="mt">· Lisbon · Jan 2019 — Aug 2020</span><div class="note">National music rights society</div></div>
       <ul class="bullets">
         <li>Designed, optimised and maintained <strong>SQL-based ETL processes</strong> and Power BI data models, centralising data from Management, Operations, HR and Legal.</li>
         <li>Automated reporting pipelines and refresh cycles, improving reliability and reducing manual maintenance.</li>
@@ -423,7 +428,7 @@ code {
 
     <div class="job">
       <div class="job-title">Business Intelligence &amp; Contract Management Intern</div>
-      <div class="job-meta"><span class="co">EDP Distribuição</span><span class="mt">· Lisbon · Jun 2016 — Mar 2017</span></div>
+      <div class="job-meta"><span class="co">EDP Distribuição</span><span class="mt">· Lisbon · Jun 2016 — Mar 2017</span><div class="note">National electricity distribution grid</div></div>
       <ul class="bullets">
         <li>Built <strong>OBIEE dashboards on the telecontrol grid</strong> that remotely operates and monitors substations and transformation posts: substation downtime, incidents by geographical area, and grid-state KPIs used by management and support teams.</li>
         <li>Supported optimisation of Contract Management processes by standardising procedures and improving information flow.</li>
