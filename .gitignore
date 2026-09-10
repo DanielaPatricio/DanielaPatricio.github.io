@@ -19,3 +19,8 @@ Guia_Aprendizagem_*.md
 # Employer-specific cover letter sources — keep local, never in the public repo.
 # The CV sources (cv-en.html, cv-pt.html) are fine to publish; cover letters are not.
 cv-src/cover-letter-*.html
+
+# Session-scoped drafts and scripts written to the repo folder by another Claude
+# chat (presentation scripts, take-home drafts, interview prep). Repo folder is
+# a convenient scratchpad but must not ship.
+Claude outputs/

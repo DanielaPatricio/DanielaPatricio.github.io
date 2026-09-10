@@ -19,6 +19,12 @@ employer descriptors. The split that prevents it:
 
 If you need a CV change and you're the portfolio chat: say so, don't edit.
 
+## Career folder
+
+Job-search material lives **outside this repo** at `Documents/Claude/Projects/Career/`:
+`applications/<employer>/`, `interview-prep/`, `salary-research/`, `outreach/`, `_archive/`.
+Nothing job-search-specific belongs in the GitHub Pages repo — it is public.
+
 ## Files
 
 | Source | Renders to | Use |
@@ -26,7 +32,7 @@ If you need a CV change and you're the portfolio chat: say so, don't edit.
 | `cv-en.html` | `../assets/Daniela_Patricio_CV.pdf` | **Engineering-leaning. The only CV linked from the site.** |
 | `cv-en-analyst.html` | `Daniela_Patricio_CV_Analyst.pdf` (stays in this folder) | Analyst-titled applications. **Never linked from the site** — uploaded to the form. |
 | `cv-pt.html` | `../assets/Daniela_Patricio_CV_PT.pdf` | Single Portuguese variant. Translated 2026-07-26 from the analyst ordering. |
-| `cover-letter-mbio.html` | `../Daniela_Patricio_Cover_Letter_MBio.pdf` | Per-employer; gitignored, never published. |
+| `cover-letter-mbio.html` | `../../Career/applications/mercedes-benz-io/Daniela_Patricio_Cover_Letter_MBio.pdf` | Per-employer. Lives **outside the repo** in the Career folder. |
 
 ## The two English variants
 
@@ -79,7 +85,7 @@ pip install weasyprint
 python -c "from weasyprint import HTML; HTML('cv-en.html').write_pdf('../assets/Daniela_Patricio_CV.pdf')"
 python -c "from weasyprint import HTML; HTML('cv-en-analyst.html').write_pdf('Daniela_Patricio_CV_Analyst.pdf')"
 python -c "from weasyprint import HTML; HTML('cv-pt.html').write_pdf('../assets/Daniela_Patricio_CV_PT.pdf')"
-python -c "from weasyprint import HTML; HTML('cover-letter-mbio.html').write_pdf('../Daniela_Patricio_Cover_Letter_MBio.pdf')"
+python -c "from weasyprint import HTML; HTML('cover-letter-mbio.html').write_pdf('../../Career/applications/mercedes-benz-io/Daniela_Patricio_Cover_Letter_MBio.pdf')"
 ```
 
 ## Design constants
